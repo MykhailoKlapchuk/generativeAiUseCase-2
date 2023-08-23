@@ -24,7 +24,7 @@ var creditsFaker = new Faker<Credit>()
     .RuleFor(c => c.CharacterName, f => f.Name.FullName())
     .RuleFor(c => c.Role, f => f.PickRandom(Roles));
 
-var titles = titlesFaker.Generate(100);
+var titles = titlesFaker.Generate(new Random().Next(100, 150));
 var credits = new List<Credit>();
 
 foreach (var title in titles)
